@@ -13,19 +13,19 @@ namespace QLGV
     public class Bus_GiaoVien
     {
         DAL_GiaoVien dAL = new DAL_GiaoVien();
-        public  List<DTO_GiaoVien> load_GV()
+        public List<DTO_GiaoVien> load_GV()
         {
             return dAL.load_GV();
         }
-        public  bool Them(DTO_GiaoVien gv)
+        public bool Them(DTO_GiaoVien gv)
         {
             return dAL.Them(gv);
         }
-        public  DataTable getMa_Khoa()
+        public DataTable getMa_Khoa()
         {
             return dAL.get_MaKhoa();
         }
-        public  DataTable getMa_BoMon(string s)
+        public DataTable getMa_BoMon(string s)
         {
             return dAL.getMa_BoMon(s);
         }
@@ -57,11 +57,11 @@ namespace QLGV
         }
         public DataTable getMonHoc(string s)
         {
-            return dAL.getMonHoc(s);    
+            return dAL.getMonHoc(s);
         }
-        public bool ThemAnh(string s,string maGiaoVien)
+        public bool ThemAnh(string s, string maGiaoVien)
         {
-            return dAL.themAnh(s,maGiaoVien);
+            return dAL.themAnh(s, maGiaoVien);
         }
         public bool xoa(string s)
         {
@@ -87,15 +87,16 @@ namespace QLGV
         {
             return dAL.ThongKe2(s);
         }
-        public DataTable ThongKe3(string s,string s2)
+        public DataTable ThongKe3(string s, string s2)
         {
-            return dAL.ThongKe3(s,s2);
+            return dAL.ThongKe3(s, s2);
         }
         public DataTable ThongKe4(string s)
         {
             return dAL.ThongKe4(s);
 
-            }
+        }
+
 
     }
 }

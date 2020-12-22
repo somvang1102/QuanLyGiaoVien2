@@ -10,9 +10,9 @@ namespace QLGV
 {
     public class Bus_DangNhap
     {
-       
+
         DAL_DangNhap _DangNhap = new DAL_DangNhap();
-        public bool DangNhap(string taiKhoan,string matKhau)
+        public bool DangNhap(string taiKhoan, string matKhau)
         {
             return _DangNhap.DangNhap(taiKhoan, matKhau);
         }
@@ -27,10 +27,6 @@ namespace QLGV
         public List<DTO_DangNhap> getTaiKhoan()
         {
             return _DangNhap.getTaiKhoan();
-        }
-        public List<string> layTenND()
-        {
-            return _DangNhap.gettenND();
         }
     }
 }

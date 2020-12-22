@@ -21,6 +21,8 @@ namespace QuanLyGiaoVien
             InitializeComponent();
         }
 
+        public string MaGiaVien { get => maGiaVien; set => maGiaVien = value; }
+
         private void ThongTinGiaoVien_Load(object sender, EventArgs e)
         {
             DataTable dt2 = new DataTable();

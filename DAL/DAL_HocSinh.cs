@@ -73,6 +73,15 @@ namespace DAL
                 return false;
             }
         }
+        public DataTable getGiaoVien2()
+        {
+
+            string query = "SELECT * from HocSinh";
+            SqlDataAdapter giaovien = new SqlDataAdapter(query, conn);
+            DataTable dtKhoa = new DataTable();
+            giaovien.Fill(dtKhoa);
+            return dtKhoa;
+        }
         public bool SuaThongTin(DTO_HocSinh a)
         {
             conn.Open();

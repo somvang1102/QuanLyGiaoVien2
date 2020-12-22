@@ -26,9 +26,12 @@ namespace QuanLyGiaoVien
             {
                 FormMain f = new FormMain();
                 this.Hide();
+                f.TenTaiKhoan = txtTaiKhoan.Text;
                 f.ShowDialog();
+
                 this.Close();
-                List<string> l = dangNhap.layTenND();
+
+
             }
             else
             {
