@@ -29,7 +29,24 @@ namespace QuanLyGiaoVien
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            DTO_HocSinh gv = new DTO_HocSinh();
+            gv.MaHocSinh = txtMa.Text;
+            gv.HoTen = txtHoten.Text;
 
+            gv.NgaySinh = DateTime.Parse(dateTimePicker1.Text);
+
+            gv.Email = txtEmail.Text;
+            gv.Lop = txtLop.Text;
+            gv.GioiTinh = txtGioiTinh.Text;
+            if (bus.sua(gv))
+            {
+                MessageBox.Show("Thay đổi thông tin giáo viên thành công", "Thông báo");
+            }
+            else
+            {
+                MessageBox.Show("Thay đổi thông tin giáo viên That bai", "Thông báo");
+            }
+            loadHocSinh();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -39,9 +56,41 @@ namespace QuanLyGiaoVien
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            DTO_HocSinh gv = new DTO_HocSinh();
+            gv.MaHocSinh = txtMa.Text;
+            gv.HoTen = txtHoten.Text;
+
+            gv.NgaySinh = DateTime.Parse(dateTimePicker1.Text);
+
+            gv.Email = txtEmail.Text;
+            gv.Lop =  txtLop.Text;
+            gv.GioiTinh = txtGioiTinh.Text;
+
+
+            if (gv.MaHocSinh != "" && gv.HoTen != "" && gv.Email != "" && gv.GioiTinh != "")
+            {
+
+                if (bus.Them(gv) == true)
+                {
+                    MessageBox.Show("thêm thành công", "thông báo");
+                    loadHocSinh();
+
+                }
+                else
+                {
+                    MessageBox.Show("thêm thất bại", "thông báo");
+                }
+            }
+            else
+            {
+                MessageBox.Show("thêm thất bại", "thông báo");
+            }    
 
         }
+           
 
+          
+      
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
@@ -49,7 +98,22 @@ namespace QuanLyGiaoVien
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-
+            if (txtMa.Text != "")
+            {
+                if (bus.xoa(txtMa.Text))
+                {
+                    MessageBox.Show("Xoa thanh cong");
+                }
+                else
+                {
+                    MessageBox.Show("Xoa that bai");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Xoa that bai");
+            }
+            loadHocSinh();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -84,6 +148,16 @@ namespace QuanLyGiaoVien
             
 
 
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtMa.Text = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
+            txtHoten.Text = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
+            txtLop.Text = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
+            txtGioiTinh.Text = Convert.ToString(dataGridView1.CurrentRow.Cells[3].Value);
+            txtEmail.Text = Convert.ToString(dataGridView1.CurrentRow.Cells[4].Value);
+            dateTimePicker1.Text = Convert.ToString(dataGridView1.CurrentRow.Cells[5].Value);
         }
     }
 }

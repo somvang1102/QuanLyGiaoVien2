@@ -38,7 +38,7 @@ namespace DAL
         }
         public bool Them(DTO_HocSinh gv)
         {
-            string query = "INSERT INTO dbo.HocSinh( MaHocSinh , HoTen ,NgaySinh ,GioiTinh , Email ,Lop )VALUES  ( '" + gv.MaHocSinh + "' , N'" + gv.HoTen + "' , '" + gv.NgaySinh + "',N'" + gv.GioiTinh + "' , '" + gv.Email + "' ,  '" + gv.Lop + "'  )";
+            string query = "INSERT INTO dbo.HocSinh ( MaHocSinh , TenHocSinh ,NgaySinh ,GioiTinh , Email ,Lop ) VALUES  ( '" + gv.MaHocSinh + "' , N'" + gv.HoTen + "' , '" + gv.NgaySinh + "',N'" + gv.GioiTinh + "' , '" + gv.Email + "' ,  '" + gv.Lop + "'  )";
 
             conn.Open();
             try
@@ -85,7 +85,7 @@ namespace DAL
         public bool SuaThongTin(DTO_HocSinh a)
         {
             conn.Open();
-            string SQL = "UPDATE dbo.GiaoVien SET MaHocSinh='" + a.MaHocSinh + "',HoTen=N'" + a.HoTen + "',NgaySinh='" + a.NgaySinh.ToString() + "',GioiTinh=N'" + a.GioiTinh + "',Email='" + a.Email + "',Lop='"+a.Lop+"')";
+            string SQL = "UPDATE dbo.HocSinh SET MaHocSinh='" + a.MaHocSinh + "',HoTen=N'" + a.HoTen + "',NgaySinh='" + a.NgaySinh.ToString() + "',GioiTinh=N'" + a.GioiTinh + "',Email='" + a.Email + "',Lop='"+a.Lop+"')";
             try
             {
                 SqlCommand cmd = new SqlCommand(SQL, conn);
