@@ -28,5 +28,9 @@ namespace QLGV
         {
             return _DangNhap.getTaiKhoan();
         }
+        public List<string> layTenND()
+        {
+            return _DangNhap.gettenND();
+        }
     }
 }

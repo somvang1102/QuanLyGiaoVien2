@@ -25,7 +25,21 @@ namespace DAL
             ada_khoa.Fill(dtKhoa);
             return dtKhoa;
         }
-        
+        public List<string> gettenND()
+
+        {
+
+            string truyvan = "SELECT UserName FROM Account";
+            List<string> l = new List<string>();
+            dt = getAccount(truyvan);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                string tenND;
+                tenND = dt.Rows[i]["UserName"].ToString();
+                l.Add(tenND);
+            }
+            return l;
+        }
         public List<DTO_DangNhap> getTaiKhoan()
         {
             string truyvan = "SELECT * FROM Account";
