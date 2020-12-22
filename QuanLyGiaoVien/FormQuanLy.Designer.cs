@@ -103,6 +103,7 @@
             this.dgvgiaovien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvgiaovien.Size = new System.Drawing.Size(1368, 261);
             this.dgvgiaovien.TabIndex = 73;
+            this.dgvgiaovien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvgiaovien_CellClick);
             // 
             // btnXoa
             // 
@@ -560,6 +561,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormQuanLy";
             this.Text = "FormQuanLy";
+            this.Load += new System.EventHandler(this.FormQuanLy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvgiaovien)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -22,6 +22,11 @@ namespace QuanLyGiaoVien
         public FormQuanLy()
         {
             InitializeComponent();
+            loadDtgvGV2();
+            loadMa_Khoa();
+
+            loadHocHam();
+            loadHocVi();
         }
         void loadDtgvGV2()
         {
@@ -142,6 +147,42 @@ namespace QuanLyGiaoVien
             else if (gv.NgaySinh.ToString() == "") MessageBox.Show("Ngay sinh giáo viên trống", "Thông báo");
 
             else MessageBox.Show("Thiếu thông tin giáo viên", "Thông báo");
+        }
+
+        private void FormQuanLy_Load(object sender, EventArgs e)
+        {
+            btnThem.Visible = false;
+            btnSua.Visible = false;
+            btnXoa.Visible = false;
+            if (loaiTaiKhoan == 0)
+            {
+                btnThem.Visible = true;
+                btnSua.Visible = true;
+                btnXoa.Visible = true;
+            }
+
+            cmbLuaChonTimKiem.Items.Add("Theo mã giáo viên");
+            cmbLuaChonTimKiem.Items.Add("Theo họ tên giáo viên");
+        }
+
+        private void dgvgiaovien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtmagv.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[0].Value);
+            txthoten.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[1].Value);
+            dateNS.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[2].Value);
+            txtGioiTin.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[3].Value);
+            txtEmail.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[4].Value);
+            cmbHocVi.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[5].Value);
+            cmbHocHam.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[6].Value);
+            cmbkhoa.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[7].Value);
+            cmbbomon.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[8].Value);
+            cmbMaMonHoc.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[9].Value);
+            txtdiachi.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[11].Value);
+            txtchucvu.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[10].Value);
+
+
+            ThongTinGiaoVien f = new ThongTinGiaoVien();
+            f.MaGiaVien = Convert.ToString(dgvgiaovien.CurrentRow.Cells[0].Value);
         }
     }
 }
