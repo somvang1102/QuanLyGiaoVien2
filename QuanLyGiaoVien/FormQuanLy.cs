@@ -184,5 +184,62 @@ namespace QuanLyGiaoVien
             ThongTinGiaoVien f = new ThongTinGiaoVien();
             f.MaGiaVien = Convert.ToString(dgvgiaovien.CurrentRow.Cells[0].Value);
         }
+
+        private void cmbkhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadBoMon(this.cmbkhoa.Text);
+        }
+
+        private void cmbbomon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            getMonHoc(cmbbomon.Text);
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            DTO_GiaoVien gv = new DTO_GiaoVien();
+            gv.Ma_GiaoVien = txtmagv.Text;
+            gv.HoTen = txthoten.Text;
+            gv.HocVi = cmbHocVi.Text;
+            gv.HocHam = cmbHocHam.Text;
+            gv.NgaySinh = DateTime.Parse(dateNS.Text);
+            gv.Ma_BoMon = cmbbomon.Text;
+            gv.Ma_Khoa = cmbkhoa.Text;
+            gv.DiaChi1 = txtdiachi.Text;
+            gv.Email = txtEmail.Text;
+            gv.ChucVu = txtchucvu.Text;
+            gv.GioiTinh = txtGioiTin.Text;
+            gv.Ma_MonHoc1 = cmbMaMonHoc.Text;
+            if (giaoVien.sua(gv))
+            {
+                MessageBox.Show("Thay đổi thông tin giáo viên thành công", "Thông báo");
+            }
+            else
+            {
+                MessageBox.Show("Thay đổi thông tin giáo viên That bai", "Thông báo");
+            }
+            loadDtgvGV2();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+            if (txtmagv.Text != "")
+            {
+                if (giaoVien.xoa(txtmagv.Text))
+                {
+                    MessageBox.Show("Xoa thanh cong");
+                }
+                else
+                {
+                    MessageBox.Show("Xoa that bai");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Xoa that bai");
+            }
+            loadDtgvGV2();
+        }
     }
 }
