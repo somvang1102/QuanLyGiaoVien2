@@ -105,7 +105,7 @@ namespace QuanLyGiaoVien
             gv.HoTen = txthoten.Text;
             gv.HocVi = cmbHocVi.Text;
             gv.HocHam = cmbHocHam.Text;
-            gv.NgaySinh = DateTime.Parse(dateNS.Text);
+             gv.NgaySinh = DateTime.Parse(dateNS.Text);
             gv.Ma_BoMon = cmbbomon.Text;
             gv.Ma_Khoa = cmbkhoa.Text;
             gv.DiaChi1 = txtdiachi.Text;
@@ -183,6 +183,7 @@ namespace QuanLyGiaoVien
 
             ThongTinGiaoVien f = new ThongTinGiaoVien();
             f.MaGiaVien = Convert.ToString(dgvgiaovien.CurrentRow.Cells[0].Value);
+            f.ShowDialog();
         }
 
         private void cmbkhoa_SelectedIndexChanged(object sender, EventArgs e)

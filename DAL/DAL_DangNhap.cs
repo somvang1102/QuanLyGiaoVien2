@@ -12,7 +12,7 @@ namespace DAL
 {
     public class DAL_DangNhap:DAL_con
     {
-        
+
         public static DataTable dt;
         DTO_DangNhap a = new DTO_DangNhap();
 
@@ -25,21 +25,7 @@ namespace DAL
             ada_khoa.Fill(dtKhoa);
             return dtKhoa;
         }
-        public List<string> gettenND()
 
-        {
-
-            string truyvan = "SELECT UserName FROM Account";
-            List<string> l = new List<string>();
-            dt = getAccount(truyvan);
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                string tenND;
-                tenND = dt.Rows[i]["UserName"].ToString();
-                l.Add(tenND);
-            }
-            return l;
-        }
         public List<DTO_DangNhap> getTaiKhoan()
         {
             string truyvan = "SELECT * FROM Account";
@@ -48,19 +34,19 @@ namespace DAL
             dt = getAccount(truyvan);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                a.LoaiTaiKhoan= Convert.ToInt32(dt.Rows[i]["Type"].ToString());
-                a.TenNguoiDung= dt.Rows[i]["DisPlayName"].ToString();
-                a.TenTaiKhoa= dt.Rows[i]["UserName"].ToString();
-                a.MatKhau= dt.Rows[i]["PassWord"].ToString();
+                a.LoaiTaiKhoan = Convert.ToInt32(dt.Rows[i]["Type"].ToString());
+                a.TenNguoiDung = dt.Rows[i]["DisPlayName"].ToString();
+                a.TenTaiKhoa = dt.Rows[i]["UserName"].ToString();
+                a.MatKhau = dt.Rows[i]["PassWord"].ToString();
                 l.Add(a);
             }
-            return l; 
+            return l;
         }
-        public bool DangNhap(string taiKhoan,string matKhau)
+        public bool DangNhap(string taiKhoan, string matKhau)
         {
             conn.Open();
-            
-            string SQL = "SELECT * FROM dbo.Account WHERE UserName='"+taiKhoan+"'AND PassWord='"+matKhau+"'";
+
+            string SQL = "SELECT * FROM dbo.Account WHERE UserName='" + taiKhoan + "'AND PassWord='" + matKhau + "'";
             SqlCommand cmd = new SqlCommand(SQL, conn);
             SqlDataReader s = cmd.ExecuteReader();
             if (s.Read() == true)
@@ -76,7 +62,7 @@ namespace DAL
             }
 
         }
-        
+
         public bool layTenDangNhap(string tenDangNhap, string matKhau)
         {
             conn.Open();
@@ -96,7 +82,7 @@ namespace DAL
                 return true;
             }
 
-          
+
 
             catch (Exception ex)
             {
@@ -105,6 +91,6 @@ namespace DAL
             }
         }
         //hàm lấy về thông tin tài khoản 
-        
+
     }
 }
