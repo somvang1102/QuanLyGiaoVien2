@@ -49,6 +49,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btnThayAnh = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.pbanhDaiDien = new System.Windows.Forms.PictureBox();
             this.label19 = new System.Windows.Forms.Label();
             this.dateNS = new System.Windows.Forms.DateTimePicker();
             this.cmbkhoa = new System.Windows.Forms.ComboBox();
@@ -69,11 +70,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pbanhDaiDien = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvgiaovien)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbanhDaiDien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSua
@@ -103,6 +103,7 @@
             this.dgvgiaovien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvgiaovien.Size = new System.Drawing.Size(1368, 261);
             this.dgvgiaovien.TabIndex = 73;
+            this.dgvgiaovien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvgiaovien_CellClick);
             // 
             // btnXoa
             // 
@@ -128,6 +129,7 @@
             this.btnThem.TabIndex = 76;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnIn
             // 
@@ -332,6 +334,15 @@
             this.label2.TabIndex = 57;
             this.label2.Text = "Học Hàm";
             // 
+            // pbanhDaiDien
+            // 
+            this.pbanhDaiDien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbanhDaiDien.Location = new System.Drawing.Point(788, 54);
+            this.pbanhDaiDien.Name = "pbanhDaiDien";
+            this.pbanhDaiDien.Size = new System.Drawing.Size(177, 177);
+            this.pbanhDaiDien.TabIndex = 56;
+            this.pbanhDaiDien.TabStop = false;
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -531,15 +542,6 @@
             this.pictureBox5.TabIndex = 83;
             this.pictureBox5.TabStop = false;
             // 
-            // pbanhDaiDien
-            // 
-            this.pbanhDaiDien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbanhDaiDien.Location = new System.Drawing.Point(788, 54);
-            this.pbanhDaiDien.Name = "pbanhDaiDien";
-            this.pbanhDaiDien.Size = new System.Drawing.Size(177, 177);
-            this.pbanhDaiDien.TabIndex = 56;
-            this.pbanhDaiDien.TabStop = false;
-            // 
             // FormQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -559,11 +561,12 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormQuanLy";
             this.Text = "FormQuanLy";
+            this.Load += new System.EventHandler(this.FormQuanLy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvgiaovien)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbanhDaiDien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

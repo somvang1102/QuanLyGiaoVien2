@@ -22,6 +22,11 @@ namespace QuanLyGiaoVien
         public FormQuanLy()
         {
             InitializeComponent();
+            loadDtgvGV2();
+            loadMa_Khoa();
+
+            loadHocHam();
+            loadHocVi();
         }
         void loadDtgvGV2()
         {
@@ -91,6 +96,93 @@ namespace QuanLyGiaoVien
             cmbMaMonHoc.DataSource = giaoVien.getMonHoc(s);
             cmbMaMonHoc.DisplayMember = "Ma_MonHoc";
             cmbMaMonHoc.ValueMember = "";
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            DTO_GiaoVien gv = new DTO_GiaoVien();
+            gv.Ma_GiaoVien = txtmagv.Text;
+            gv.HoTen = txthoten.Text;
+            gv.HocVi = cmbHocVi.Text;
+            gv.HocHam = cmbHocHam.Text;
+            gv.NgaySinh = DateTime.Parse(dateNS.Text);
+            gv.Ma_BoMon = cmbbomon.Text;
+            gv.Ma_Khoa = cmbkhoa.Text;
+            gv.DiaChi1 = txtdiachi.Text;
+            gv.Email = txtEmail.Text;
+            gv.ChucVu = txtchucvu.Text;
+            gv.GioiTinh = txtGioiTin.Text;
+            gv.Ma_MonHoc1 = cmbMaMonHoc.Text;
+            gv.DuongDanAnh = s;
+            if (gv.Ma_GiaoVien != "" && gv.HoTen != "" && gv.HocVi != "" && gv.HocHam != "" && gv.Ma_BoMon != "" && gv.Ma_Khoa != "" && gv.Ma_MonHoc1 != "" && gv.ChucVu != "" && gv.DiaChi1 != "" && gv.Email != "" && gv.GioiTinh != "")
+            {
+                if (checkMaGV() == true)
+                {
+                    if (giaoVien.Them(gv) == true)
+                    {
+                        MessageBox.Show("thêm thành công", "thông báo");
+                        loadDtgvGV2();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("thêm thất bại", "thông báo");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("thêm thất bại,mã giáo viên trùng ", "thông báo");
+                }
+            }
+            else if (gv.Ma_GiaoVien == "")
+            {
+                MessageBox.Show("Thiếu mã giáo viên", "Thông báo");
+
+            }
+            else if (gv.HoTen == "") MessageBox.Show("Thiếu tên giáo viên", "Thông báo");
+            else if (gv.ChucVu == "") MessageBox.Show("Thiếu chức vụ ", "Thông báo");
+            else if (gv.GioiTinh == "") MessageBox.Show("Nhập thiếu giới tính giáo viên", "Thông báo");
+            else if (gv.DiaChi1 == "") MessageBox.Show("Thiếu địa chỉ giáo viên", "Thông báo");
+            else if (gv.Email == "") MessageBox.Show("Thiếu email giáo viên", "Thông báo");
+            else if (gv.NgaySinh.ToString() == "") MessageBox.Show("Ngay sinh giáo viên trống", "Thông báo");
+
+            else MessageBox.Show("Thiếu thông tin giáo viên", "Thông báo");
+        }
+
+        private void FormQuanLy_Load(object sender, EventArgs e)
+        {
+            btnThem.Visible = false;
+            btnSua.Visible = false;
+            btnXoa.Visible = false;
+            if (loaiTaiKhoan == 0)
+            {
+                btnThem.Visible = true;
+                btnSua.Visible = true;
+                btnXoa.Visible = true;
+            }
+
+            cmbLuaChonTimKiem.Items.Add("Theo mã giáo viên");
+            cmbLuaChonTimKiem.Items.Add("Theo họ tên giáo viên");
+        }
+
+        private void dgvgiaovien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtmagv.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[0].Value);
+            txthoten.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[1].Value);
+            dateNS.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[2].Value);
+            txtGioiTin.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[3].Value);
+            txtEmail.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[4].Value);
+            cmbHocVi.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[5].Value);
+            cmbHocHam.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[6].Value);
+            cmbkhoa.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[7].Value);
+            cmbbomon.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[8].Value);
+            cmbMaMonHoc.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[9].Value);
+            txtdiachi.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[11].Value);
+            txtchucvu.Text = Convert.ToString(dgvgiaovien.CurrentRow.Cells[10].Value);
+
+
+            ThongTinGiaoVien f = new ThongTinGiaoVien();
+            f.MaGiaVien = Convert.ToString(dgvgiaovien.CurrentRow.Cells[0].Value);
         }
     }
 }
