@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using QLGV;
+using DTO;
 namespace QuanLyGiaoVien
 {
     public partial class FormMain : Form
     {
+        BUS_khoa bus_Khoa = new BUS_khoa();
         public FormMain()
         {
             InitializeComponent();
@@ -60,6 +62,11 @@ namespace QuanLyGiaoVien
         private void lịchGiảngDạyToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBoMon_Click(object sender, EventArgs e)
+        {
+            data1.DataSource = bus_Khoa.getAllBoMon();
         }
     }
 }

@@ -40,14 +40,12 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbMaMonHoc = new System.Windows.Forms.ComboBox();
-            this.btnChonAnh = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txtGioiTin = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.cmbHocHam = new System.Windows.Forms.ComboBox();
             this.cmbHocVi = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnThayAnh = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.dateNS = new System.Windows.Forms.DateTimePicker();
@@ -69,11 +67,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pbanhDaiDien = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvgiaovien)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbanhDaiDien)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSua
@@ -88,6 +84,7 @@
             this.btnSua.TabIndex = 84;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // dgvgiaovien
             // 
@@ -103,6 +100,7 @@
             this.dgvgiaovien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvgiaovien.Size = new System.Drawing.Size(1368, 261);
             this.dgvgiaovien.TabIndex = 73;
+            this.dgvgiaovien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvgiaovien_CellClick);
             // 
             // btnXoa
             // 
@@ -115,6 +113,7 @@
             this.btnXoa.TabIndex = 77;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -128,6 +127,7 @@
             this.btnThem.TabIndex = 76;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnIn
             // 
@@ -200,16 +200,13 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LightPink;
             this.groupBox1.Controls.Add(this.cmbMaMonHoc);
-            this.groupBox1.Controls.Add(this.btnChonAnh);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.txtGioiTin);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.cmbHocHam);
             this.groupBox1.Controls.Add(this.cmbHocVi);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.btnThayAnh);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.pbanhDaiDien);
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.dateNS);
             this.groupBox1.Controls.Add(this.cmbkhoa);
@@ -246,15 +243,6 @@
             this.cmbMaMonHoc.Name = "cmbMaMonHoc";
             this.cmbMaMonHoc.Size = new System.Drawing.Size(229, 28);
             this.cmbMaMonHoc.TabIndex = 67;
-            // 
-            // btnChonAnh
-            // 
-            this.btnChonAnh.Location = new System.Drawing.Point(772, 253);
-            this.btnChonAnh.Name = "btnChonAnh";
-            this.btnChonAnh.Size = new System.Drawing.Size(102, 51);
-            this.btnChonAnh.TabIndex = 66;
-            this.btnChonAnh.Text = "Chọn ảnh";
-            this.btnChonAnh.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
@@ -312,15 +300,6 @@
             this.label12.TabIndex = 59;
             this.label12.Text = "Môn";
             // 
-            // btnThayAnh
-            // 
-            this.btnThayAnh.Location = new System.Drawing.Point(907, 253);
-            this.btnThayAnh.Name = "btnThayAnh";
-            this.btnThayAnh.Size = new System.Drawing.Size(102, 51);
-            this.btnThayAnh.TabIndex = 58;
-            this.btnThayAnh.Text = "Thay Đổi";
-            this.btnThayAnh.UseVisualStyleBackColor = true;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -361,6 +340,7 @@
             this.cmbkhoa.Name = "cmbkhoa";
             this.cmbkhoa.Size = new System.Drawing.Size(229, 28);
             this.cmbkhoa.TabIndex = 53;
+            this.cmbkhoa.SelectedIndexChanged += new System.EventHandler(this.cmbkhoa_SelectedIndexChanged);
             // 
             // label18
             // 
@@ -399,6 +379,7 @@
             this.cmbbomon.Name = "cmbbomon";
             this.cmbbomon.Size = new System.Drawing.Size(229, 28);
             this.cmbbomon.TabIndex = 45;
+            this.cmbbomon.SelectedIndexChanged += new System.EventHandler(this.cmbbomon_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -531,15 +512,6 @@
             this.pictureBox5.TabIndex = 83;
             this.pictureBox5.TabStop = false;
             // 
-            // pbanhDaiDien
-            // 
-            this.pbanhDaiDien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbanhDaiDien.Location = new System.Drawing.Point(788, 54);
-            this.pbanhDaiDien.Name = "pbanhDaiDien";
-            this.pbanhDaiDien.Size = new System.Drawing.Size(177, 177);
-            this.pbanhDaiDien.TabIndex = 56;
-            this.pbanhDaiDien.TabStop = false;
-            // 
             // FormQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -559,11 +531,11 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormQuanLy";
             this.Text = "FormQuanLy";
+            this.Load += new System.EventHandler(this.FormQuanLy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvgiaovien)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbanhDaiDien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -584,16 +556,13 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cmbMaMonHoc;
-        private System.Windows.Forms.Button btnChonAnh;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtGioiTin;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.ComboBox cmbHocHam;
         private System.Windows.Forms.ComboBox cmbHocVi;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btnThayAnh;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pbanhDaiDien;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DateTimePicker dateNS;
         private System.Windows.Forms.ComboBox cmbkhoa;

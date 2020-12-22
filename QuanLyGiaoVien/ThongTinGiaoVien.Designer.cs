@@ -294,6 +294,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ThongTinGiaoVien";
             this.Text = "ThongTinGiaoVien";
+            this.Load += new System.EventHandler(this.ThongTinGiaoVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
