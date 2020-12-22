@@ -66,6 +66,7 @@
             this.btnok.TabIndex = 30;
             this.btnok.Text = "Ok";
             this.btnok.UseVisualStyleBackColor = true;
+            this.btnok.Click += new System.EventHandler(this.btnok_Click);
             // 
             // label5
             // 
@@ -225,6 +226,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ThongTinTaiKhoan";
             this.Text = "ThongTinTaiKhoan";
+            this.Load += new System.EventHandler(this.ThongTinTaiKhoan_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
