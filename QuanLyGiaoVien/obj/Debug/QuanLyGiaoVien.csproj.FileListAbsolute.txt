@@ -22,3 +22,16 @@ C:\Users\Asus\Documents\GitHub\QuanLyGiaoVien2\QuanLyGiaoVien\bin\Debug\DAL.pdb
 C:\Users\Asus\Documents\GitHub\QuanLyGiaoVien2\QuanLyGiaoVien\obj\Debug\QuanLyGiaoVien.csproj.CopyComplete
 C:\Users\Asus\Documents\GitHub\QuanLyGiaoVien2\QuanLyGiaoVien\obj\Debug\QuanLyGiaoVien.exe
 C:\Users\Asus\Documents\GitHub\QuanLyGiaoVien2\QuanLyGiaoVien\obj\Debug\QuanLyGiaoVien.pdb
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\QuanLyGiaoVien\obj\Debug\QuanLyGiaoVien.csprojAssemblyReference.cache
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\QuanLyGiaoVien\obj\Debug\QuanLyGiaoVien.DoiMatKhau.resources
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\QuanLyGiaoVien\obj\Debug\QuanLyGiaoVien.Form1.resources
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\QuanLyGiaoVien\obj\Debug\QuanLyGiaoVien.FormMain.resources
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\QuanLyGiaoVien\obj\Debug\QuanLyGiaoVien.FormQuanLy.resources
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\QuanLyGiaoVien\obj\Debug\QuanLyGiaoVien.Properties.Resources.resources
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\QuanLyGiaoVien\obj\Debug\QuanLyGiaoVien.ThongKeGiaoVien.resources
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\QuanLyGiaoVien\obj\Debug\QuanLyGiaoVien.ThongTinGiaoVien.resources
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\QuanLyGiaoVien\obj\Debug\QuanLyGiaoVien.ThongTinTaiKhoan.resources
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\QuanLyGiaoVien\obj\Debug\QuanLyGiaoVien.csproj.GenerateResource.cache
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\QuanLyGiaoVien\obj\Debug\QuanLyGiaoVien.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\QuanLyGiaoVien\obj\Debug\QuanLyGiaoVien.exe
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\QuanLyGiaoVien\obj\Debug\QuanLyGiaoVien.pdb

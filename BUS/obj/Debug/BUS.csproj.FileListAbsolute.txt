@@ -9,3 +9,14 @@ C:\Users\Asus\Documents\GitHub\QuanLyGiaoVien2\BUS\obj\Debug\BUS.csproj.CoreComp
 C:\Users\Asus\Documents\GitHub\QuanLyGiaoVien2\BUS\obj\Debug\BUS.csproj.CopyComplete
 C:\Users\Asus\Documents\GitHub\QuanLyGiaoVien2\BUS\obj\Debug\BUS.dll
 C:\Users\Asus\Documents\GitHub\QuanLyGiaoVien2\BUS\obj\Debug\BUS.pdb
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\BUS\bin\Debug\BUS.dll
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\BUS\bin\Debug\BUS.pdb
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\BUS\bin\Debug\DAL.dll
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\BUS\bin\Debug\DTO.dll
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\BUS\bin\Debug\DAL.pdb
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\BUS\bin\Debug\DTO.pdb
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\BUS\obj\Debug\BUS.csproj.CopyComplete
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\BUS\obj\Debug\BUS.dll
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\BUS\obj\Debug\BUS.pdb

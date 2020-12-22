@@ -4,3 +4,9 @@ C:\Users\Asus\Documents\GitHub\QuanLyGiaoVien2\DTO\obj\Debug\DTO.csprojAssemblyR
 C:\Users\Asus\Documents\GitHub\QuanLyGiaoVien2\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\Asus\Documents\GitHub\QuanLyGiaoVien2\DTO\obj\Debug\DTO.dll
 C:\Users\Asus\Documents\GitHub\QuanLyGiaoVien2\DTO\obj\Debug\DTO.pdb
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\DTO\bin\Debug\DTO.dll
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\DTO\bin\Debug\DTO.pdb
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\DTO\obj\Debug\DTO.dll
+C:\Users\LENOVO\Documents\GitHub\QuanLyGiaoVien2\DTO\obj\Debug\DTO.pdb
