@@ -59,6 +59,7 @@
             this.btnThongKe.TabIndex = 16;
             this.btnThongKe.Text = "Thống kê";
             this.btnThongKe.UseVisualStyleBackColor = true;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // cmbChucVu
             // 
@@ -101,6 +102,7 @@
             this.cmbKhoa.Name = "cmbKhoa";
             this.cmbKhoa.Size = new System.Drawing.Size(271, 24);
             this.cmbKhoa.TabIndex = 11;
+            this.cmbKhoa.SelectedIndexChanged += new System.EventHandler(this.cmbKhoa_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -138,6 +140,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "ThongKeGiaoVien";
             this.Text = "ThongKeGiaoVien";
+            this.Load += new System.EventHandler(this.ThongKeGiaoVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
