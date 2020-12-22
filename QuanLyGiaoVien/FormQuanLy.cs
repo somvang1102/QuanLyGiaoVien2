@@ -92,5 +92,56 @@ namespace QuanLyGiaoVien
             cmbMaMonHoc.DisplayMember = "Ma_MonHoc";
             cmbMaMonHoc.ValueMember = "";
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            DTO_GiaoVien gv = new DTO_GiaoVien();
+            gv.Ma_GiaoVien = txtmagv.Text;
+            gv.HoTen = txthoten.Text;
+            gv.HocVi = cmbHocVi.Text;
+            gv.HocHam = cmbHocHam.Text;
+            gv.NgaySinh = DateTime.Parse(dateNS.Text);
+            gv.Ma_BoMon = cmbbomon.Text;
+            gv.Ma_Khoa = cmbkhoa.Text;
+            gv.DiaChi1 = txtdiachi.Text;
+            gv.Email = txtEmail.Text;
+            gv.ChucVu = txtchucvu.Text;
+            gv.GioiTinh = txtGioiTin.Text;
+            gv.Ma_MonHoc1 = cmbMaMonHoc.Text;
+            gv.DuongDanAnh = s;
+            if (gv.Ma_GiaoVien != "" && gv.HoTen != "" && gv.HocVi != "" && gv.HocHam != "" && gv.Ma_BoMon != "" && gv.Ma_Khoa != "" && gv.Ma_MonHoc1 != "" && gv.ChucVu != "" && gv.DiaChi1 != "" && gv.Email != "" && gv.GioiTinh != "")
+            {
+                if (checkMaGV() == true)
+                {
+                    if (giaoVien.Them(gv) == true)
+                    {
+                        MessageBox.Show("thêm thành công", "thông báo");
+                        loadDtgvGV2();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("thêm thất bại", "thông báo");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("thêm thất bại,mã giáo viên trùng ", "thông báo");
+                }
+            }
+            else if (gv.Ma_GiaoVien == "")
+            {
+                MessageBox.Show("Thiếu mã giáo viên", "Thông báo");
+
+            }
+            else if (gv.HoTen == "") MessageBox.Show("Thiếu tên giáo viên", "Thông báo");
+            else if (gv.ChucVu == "") MessageBox.Show("Thiếu chức vụ ", "Thông báo");
+            else if (gv.GioiTinh == "") MessageBox.Show("Nhập thiếu giới tính giáo viên", "Thông báo");
+            else if (gv.DiaChi1 == "") MessageBox.Show("Thiếu địa chỉ giáo viên", "Thông báo");
+            else if (gv.Email == "") MessageBox.Show("Thiếu email giáo viên", "Thông báo");
+            else if (gv.NgaySinh.ToString() == "") MessageBox.Show("Ngay sinh giáo viên trống", "Thông báo");
+
+            else MessageBox.Show("Thiếu thông tin giáo viên", "Thông báo");
+        }
     }
 }
